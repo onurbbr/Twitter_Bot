@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
 using OpenQA.Selenium;
@@ -38,8 +39,10 @@ namespace Twitter_Bot
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Console.WriteLine();
             ChromeOptions options = new ChromeOptions();
             options.BinaryLocation = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
+            options.AddArgument("--user-data-dir=" + System.IO.Path.GetTempPath() + "\\twitter_bot_user_data\\" + textBox1.Text.ToString());
             //options.AddArguments("headless");
 
             ChromeDriverService driverService = ChromeDriverService.CreateDefaultService("C:\\Program Files\\Google\\Chrome\\Application");
@@ -51,6 +54,8 @@ namespace Twitter_Bot
             driver.Navigate().GoToUrl(url);
             login(driver, textBox1.Text.ToString(), textBox2.Text.ToString());
             Thread.Sleep(1000);
+            Console.WriteLine("Successfully logged in");
+
 
             driver.Close();
             driver.Quit();
