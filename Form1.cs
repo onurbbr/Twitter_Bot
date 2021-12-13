@@ -54,10 +54,6 @@ namespace Twitter_Bot
 
             driver.Close();
             driver.Quit();
-
-            string strCmdText;
-            strCmdText = "/i /m chromedriver.exe /f";
-            System.Diagnostics.Process.Start("taskkill.exe", strCmdText);
         }
     }
 }
