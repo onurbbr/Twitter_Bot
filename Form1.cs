@@ -71,6 +71,8 @@ namespace Twitter_Bot
             driver.Navigate().GoToUrl(url);
             login(driver, textBox1.Text.ToString(), textBox2.Text.ToString());
 
+
+
             driver.Close();
             driver.Quit();
         }
