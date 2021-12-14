@@ -16,9 +16,9 @@ namespace Twitter_Bot
             InitializeComponent();
         }
 
-        private void login(WebDriver driver, string user_mail, string user_pass)
+        private bool login(WebDriver driver, string user_mail, string user_pass)
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             try
             {
                 //first login button
@@ -44,16 +44,17 @@ namespace Twitter_Bot
                 //locate pass input and write pass
                 IWebElement pass = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.Name("password")));
                 pass.SendKeys(user_pass + Keys.Enter);
+                return true;
 
             }
             catch (Exception)
             {
-                Console.WriteLine("Login error");
-                //throw;
+                return false;
             }
 
         }
 
+        public static string SetValueForText1 = "";
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -69,9 +70,19 @@ namespace Twitter_Bot
             string url = "https://twitter.com/";
 
             driver.Navigate().GoToUrl(url);
-            login(driver, textBox1.Text.ToString(), textBox2.Text.ToString());
 
-
+            if (!login(driver, textBox1.Text.ToString(), textBox2.Text.ToString()))
+            {
+                Console.WriteLine("Login Error! Plz try again!");
+                
+            } else
+            {
+                SetValueForText1 = textBox1.Text;
+                this.Hide();
+                Form2 formshow = new Form2();
+                formshow.ShowDialog();
+                formshow = null;
+            }
 
             driver.Close();
             driver.Quit();

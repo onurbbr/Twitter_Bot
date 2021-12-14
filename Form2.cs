@@ -16,6 +16,7 @@ namespace Twitter_Bot
             InitializeComponent();
         }
 
+
         private void button2_Click(object sender, EventArgs e)
         {
 
@@ -24,6 +25,11 @@ namespace Twitter_Bot
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            label3.Text = Form1.SetValueForText1;
         }
     }
 }
