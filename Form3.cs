@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
+using Keys = OpenQA.Selenium.Keys;
 
 namespace Twitter_Bot
 {
@@ -24,7 +23,9 @@ namespace Twitter_Bot
 
         private void button1_Click(object sender, EventArgs e)
         {
-        
+            WebDriverWait wait = new WebDriverWait(Form1.driver, TimeSpan.FromSeconds(10));
+            string username_url = "https://www.twitter.com/" + textBox1.Text;
+            Form1.driver.Navigate().GoToUrl(username_url);
         }
     }
 }

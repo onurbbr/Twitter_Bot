@@ -54,18 +54,19 @@ namespace Twitter_Bot
 
         }
 
+        public static WebDriver driver;
         public static string SetValueForText1 = "";
         private void button1_Click(object sender, EventArgs e)
         {
             ChromeOptions options = new ChromeOptions();
             options.BinaryLocation = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
-            options.AddArgument("--user-data-dir=" + System.IO.Path.GetTempPath() + "\\twitter_bot_user_data\\" + textBox1.Text.ToString());
+            //options.AddArgument("--user-data-dir=" + System.IO.Path.GetTempPath() + "\\twitter_bot_user_data\\" + textBox1.Text.ToString());
             //options.AddArguments("headless");
 
             ChromeDriverService driverService = ChromeDriverService.CreateDefaultService("C:\\Program Files\\Google\\Chrome\\Application");
             driverService.HideCommandPromptWindow = true;
 
-            WebDriver driver = new ChromeDriver(driverService, options);
+            driver = new ChromeDriver(driverService, options);
             string url = "https://twitter.com/";
 
             driver.Navigate().GoToUrl(url);
@@ -83,7 +84,7 @@ namespace Twitter_Bot
                 formshow.ShowDialog();
                 formshow = null;
             }
-
+            
             driver.Close();
             driver.Quit();
         }
