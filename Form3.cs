@@ -38,7 +38,10 @@ namespace Twitter_Bot
             {
                 //catched an exception means this account does exists
                 label2.Visible = false;
-
+                this.Hide();
+                Form4 formshow3 = new Form4();
+                formshow3.ShowDialog();
+                formshow3 = null;
             }
         }
     }
