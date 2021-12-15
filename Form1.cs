@@ -71,7 +71,8 @@ namespace Twitter_Bot
 
             driver.Navigate().GoToUrl(url);
 
-            if (!login(driver, textBox1.Text.ToString(), textBox2.Text.ToString()))
+            //!login(driver, textBox1.Text.ToString(), textBox2.Text.ToString())
+            if (1 != 1)
             {
                 Console.WriteLine("Login Error! Plz try again!");
             }
