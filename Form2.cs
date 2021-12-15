@@ -19,7 +19,10 @@ namespace Twitter_Bot
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Form3 formshow2 = new Form3();
+            formshow2.ShowDialog();
+            formshow2 = null;
         }
 
         private void button1_Click(object sender, EventArgs e)
