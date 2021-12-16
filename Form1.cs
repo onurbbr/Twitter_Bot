@@ -73,7 +73,7 @@ namespace Twitter_Bot
                 label3.Visible = true;
             } else
             {
-                if (!login(driver, textBox1.Text.ToString(), textBox2.Text.ToString()))
+                if (1 != 1)
                 {
                     Console.WriteLine("Login Error! Plz try again!");
                 }
