@@ -65,7 +65,8 @@ namespace Twitter_Bot
 
             ChromeDriverService driverService = ChromeDriverService.CreateDefaultService("C:\\Program Files\\Google\\Chrome\\Application");
             driverService.HideCommandPromptWindow = true;
-            driver = new ChromeDriver(driverService, options);
+            
+
             // !login(driver, textBox1.Text.ToString(), textBox2.Text.ToString())
             // 1 != 1
             if (string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(textBox2.Text))
@@ -74,14 +75,17 @@ namespace Twitter_Bot
             }
             else
             {
+                driver = new ChromeDriver(driverService, options);
+                string url = "https://twitter.com/";
+                driver.Navigate().GoToUrl(url);
+
                 if (!login(driver, textBox1.Text.ToString(), textBox2.Text.ToString()))
                 {
                     Console.WriteLine("Login Error! Plz try again!");
                 }
                 else //Buraya kullanıcının şifresini yanlış girmesi durumunu ekleyelim
                 {
-                    string url = "https://twitter.com/";
-                    driver.Navigate().GoToUrl(url);
+                    
                     SetValueForText1 = textBox1.Text;
                     this.Hide();
                     Form2 formshow = new Form2();
