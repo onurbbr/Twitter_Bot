@@ -19,7 +19,7 @@ namespace Twitter_Bot
         private void Form4_Load(object sender, EventArgs e)
         {
             WebDriverWait wait = new WebDriverWait(Form1.driver, TimeSpan.FromSeconds(5));
-            IWebElement profile_pic = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.XPath("//a[contains(@href, 'photo')]//img[contains(@src, 'profile')]")));
+            IWebElement profile_pic = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.XPath("//a[contains(@href, 'photo')]//img[contains(@src, 'profile_images')]")));
             string pp_url = profile_pic.GetAttribute("src");
             pictureBox1.Load(pp_url);
             
