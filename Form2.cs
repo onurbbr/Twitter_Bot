@@ -34,5 +34,12 @@ namespace Twitter_Bot
         {
             label3.Text = Form1.SetValueForText1;
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form1.driver.Close();
+            Form1.driver.Quit();
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }

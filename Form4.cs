@@ -35,5 +35,13 @@ namespace Twitter_Bot
                 
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form3 formshow3 = new Form3();
+            formshow3.ShowDialog();
+            formshow3 = null;
+        }
     }
 }
