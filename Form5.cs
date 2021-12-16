@@ -26,6 +26,10 @@ namespace Twitter_Bot
         {
             string tweet_url = textBox1.Text;
             Form1.driver.Navigate().GoToUrl(tweet_url);
+            this.Hide();
+            Form6 formshow6 = new Form6();
+            formshow6.ShowDialog();
+            formshow6 = null;
         }
     }
 }
