@@ -26,5 +26,14 @@ namespace Twitter_Bot
             IWebElement profile_name = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.XPath("//div[@data-testid = 'UserName']//div[@dir='auto']//span")));
             label1.Text = profile_name.Text;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            WebDriverWait wait = new WebDriverWait(Form1.driver, TimeSpan.FromSeconds(5));
+            for (int i = 0; i < 3; i++)
+            {
+                
+            }
+        }
     }
 }
