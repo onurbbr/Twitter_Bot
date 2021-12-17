@@ -25,11 +25,19 @@ namespace Twitter_Bot
             
             IWebElement profile_name = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.XPath("//div[@data-testid = 'UserName']//div[@dir='auto']//span")));
             label1.Text = profile_name.Text;
+
+            IWebElement tweet_count = Form1.driver.FindElement(By.XPath("//div[contains(text(), 'Tweet')]"));
+            string t_count = tweet_count.Text;
+            if(t_count.Substring(0,1) == "0")
+            {
+                label2.Visible = true;
+                button1.Enabled = false;
+                button2.Enabled = false;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            WebDriverWait wait = new WebDriverWait(Form1.driver, TimeSpan.FromSeconds(5));
             for (int i = 0; i < 3; i++)
             {
                 
@@ -42,6 +50,11 @@ namespace Twitter_Bot
             Form3 formshow3 = new Form3();
             formshow3.ShowDialog();
             formshow3 = null;
+        }
+
+        private void Form4_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Form1.driver.Quit();
         }
     }
 }

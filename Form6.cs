@@ -31,8 +31,19 @@ namespace Twitter_Bot
 
             IWebElement profile_tag = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.XPath("(//a//div[@dir = 'ltr'])[1]")));
             label3.Text = profile_tag.Text;
+        }
 
-            
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form5 formshow2 = new Form5();
+            formshow2.ShowDialog();
+            formshow2 = null;
+        }
+
+        private void Form6_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Form1.driver.Quit();
         }
     }
 }
