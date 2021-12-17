@@ -18,11 +18,11 @@ namespace Twitter_Bot
 
         private bool login(WebDriver driver, string user_mail, string user_pass)
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));//a[@data-testid = 'login']
             try
             {
                 //first login button
-                IWebElement button = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath("//a[@data-testid='loginButton']")));
+                IWebElement button = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath("//a[contains(@data-testid, 'login')]")));
                 button.Click();
 
                 // locate mail input location

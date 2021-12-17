@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form6));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Retweet_btn = new System.Windows.Forms.Button();
+            this.Like_btn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
@@ -62,27 +62,29 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "tweet";
             // 
-            // button1
+            // Retweet_btn
             // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.Location = new System.Drawing.Point(33, 246);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 49);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Retweet";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Retweet_btn.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Retweet_btn.Location = new System.Drawing.Point(33, 246);
+            this.Retweet_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.Retweet_btn.Name = "Retweet_btn";
+            this.Retweet_btn.Size = new System.Drawing.Size(200, 49);
+            this.Retweet_btn.TabIndex = 2;
+            this.Retweet_btn.Text = "Retweet";
+            this.Retweet_btn.UseVisualStyleBackColor = true;
+            this.Retweet_btn.Click += new System.EventHandler(this.Retweet_btn_Click);
             // 
-            // button2
+            // Like_btn
             // 
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button2.Location = new System.Drawing.Point(33, 303);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(200, 49);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Like";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Like_btn.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Like_btn.Location = new System.Drawing.Point(33, 303);
+            this.Like_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.Like_btn.Name = "Like_btn";
+            this.Like_btn.Size = new System.Drawing.Size(200, 49);
+            this.Like_btn.TabIndex = 3;
+            this.Like_btn.Text = "Like";
+            this.Like_btn.UseVisualStyleBackColor = true;
+            this.Like_btn.Click += new System.EventHandler(this.Like_btn_Click);
             // 
             // label2
             // 
@@ -124,8 +126,8 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Like_btn);
+            this.Controls.Add(this.Retweet_btn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -148,8 +150,8 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Retweet_btn;
+        private System.Windows.Forms.Button Like_btn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button3;
