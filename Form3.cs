@@ -21,6 +21,8 @@ namespace Twitter_Bot
             label2.Visible = false;
         }
 
+        public static string SetValueForText1 = "";
+
         private void button1_Click(object sender, EventArgs e)
         {
             label2.Visible= false;
@@ -47,6 +49,7 @@ namespace Twitter_Bot
                 {
                     //catched an exception means this account does exists
                     label2.Visible = false;
+                    SetValueForText1 = textBox1.Text;
                     this.Hide();
                     Form4 formshow3 = new Form4();
                     formshow3.ShowDialog();

@@ -79,7 +79,7 @@ namespace Twitter_Bot
                 string url = "https://twitter.com/";
                 driver.Navigate().GoToUrl(url);
 
-                if (1 != 1)
+                if (!login(driver, textBox1.Text.ToString(), textBox2.Text.ToString()))
                 {
                     Console.WriteLine("Login Error! Plz try again!");
                 }
@@ -93,6 +93,12 @@ namespace Twitter_Bot
                     formshow = null;
                 }
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            textBox1.Text = "jopqzijeudbr@pussport.com";
+            textBox2.Text = "9YNkEfnv";
         }
     }
 }
