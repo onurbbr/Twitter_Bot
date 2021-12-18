@@ -28,7 +28,7 @@ namespace Twitter_Bot
             String stat = l_btn.GetAttribute("data-testid");
             if (stat == "unlike")
             {
-                Like_btn.Text = "Unlike";
+                Like_btn.Text = "Liked";
                 Like_btn.BackColor = ColorTranslator.FromHtml("#f91880");
                 Like_btn.Font = new Font(Like_btn.Font.Name, 12, FontStyle.Bold);
             }
@@ -48,11 +48,13 @@ namespace Twitter_Bot
             {
                 Retweet_btn.BackColor = ColorTranslator.FromHtml("#00ba7c");
                 Retweet_btn.Font = new Font(Like_btn.Font.Name, 12, FontStyle.Bold);
+                Retweet_btn.Text = "Retweeted";
             }
             else
             {
                 Retweet_btn.BackColor = SystemColors.Control;
                 Retweet_btn.Font = new Font(Like_btn.Font.Name, 12, FontStyle.Regular);
+                Retweet_btn.Text = "Retweet";
             }
         }
 
@@ -128,6 +130,42 @@ namespace Twitter_Bot
                 like_stat = false;
             }
             check_like();
+        }
+
+        private void Retweet_btn_MouseEnter(object sender, EventArgs e)
+        {
+            if (retweet_stat)
+            {
+                Retweet_btn.BackColor = ColorTranslator.FromHtml("#19d798");
+                Retweet_btn.Text = "Unretweet";
+            }
+        }
+
+        private void Retweet_btn_MouseLeave(object sender, EventArgs e)
+        {
+            if (retweet_stat)
+            {
+                Retweet_btn.BackColor = ColorTranslator.FromHtml("#00ba7c");
+                Retweet_btn.Text = "Retweeted";
+            }
+        }
+
+        private void Like_btn_MouseEnter(object sender, EventArgs e)
+        {
+            if (like_stat)
+            {
+                Like_btn.BackColor = ColorTranslator.FromHtml("#ff5aa6");
+                Like_btn.Text = "Unlike";
+            }
+        }
+
+        private void Like_btn_MouseLeave(object sender, EventArgs e)
+        {
+            if (like_stat)
+            {
+                Like_btn.BackColor = ColorTranslator.FromHtml("#fb3d94");
+                Like_btn.Text = "Liked";
+            }
         }
     }
 }

@@ -73,6 +73,8 @@
             this.Retweet_btn.Text = "Retweet";
             this.Retweet_btn.UseVisualStyleBackColor = true;
             this.Retweet_btn.Click += new System.EventHandler(this.Retweet_btn_Click);
+            this.Retweet_btn.MouseEnter += new System.EventHandler(this.Retweet_btn_MouseEnter);
+            this.Retweet_btn.MouseLeave += new System.EventHandler(this.Retweet_btn_MouseLeave);
             // 
             // Like_btn
             // 
@@ -85,6 +87,8 @@
             this.Like_btn.Text = "Like";
             this.Like_btn.UseVisualStyleBackColor = true;
             this.Like_btn.Click += new System.EventHandler(this.Like_btn_Click);
+            this.Like_btn.MouseEnter += new System.EventHandler(this.Like_btn_MouseEnter);
+            this.Like_btn.MouseLeave += new System.EventHandler(this.Like_btn_MouseLeave);
             // 
             // label2
             // 
