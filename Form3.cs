@@ -1,11 +1,8 @@
-﻿using System;
-using System.Drawing;
-using System.Threading;
-using System.Windows.Forms;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using Keys = OpenQA.Selenium.Keys;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Twitter_Bot
 {
@@ -17,7 +14,7 @@ namespace Twitter_Bot
         }
 
         public static string SetValueForText1 = "";
-        
+
         private void next_form()
         {
             label2.Visible = false;
@@ -30,11 +27,11 @@ namespace Twitter_Bot
 
         private void button1_Click(object sender, EventArgs e)
         {
-            label2.Visible= false;
+            label2.Visible = false;
             if (string.IsNullOrWhiteSpace(textBox1.Text))
             {
                 label2.Text = "Must not be empty";
-                label2.Visible=true;
+                label2.Visible = true;
             }
             else
             {

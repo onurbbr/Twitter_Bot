@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Drawing;
-using System.Threading;
 using System.Windows.Forms;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.UI;
-using Keys = OpenQA.Selenium.Keys;
 
 namespace Twitter_Bot
 {

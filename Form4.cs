@@ -1,11 +1,8 @@
-﻿using System;
-using System.Drawing;
-using System.Threading;
-using System.Windows.Forms;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using Keys = OpenQA.Selenium.Keys;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Twitter_Bot
 {
@@ -32,8 +29,9 @@ namespace Twitter_Bot
                 return false;
             }
         }
-        
-        private void follow_check() {
+
+        private void follow_check()
+        {
             IWebElement follow_button = Form1.driver.FindElement(By.XPath("//div[contains(@aria-label, '@" + Form3.SetValueForText1 + "')]"));
             String follow_check = follow_button.GetAttribute("data-testid");
             if (follow_check.Contains("-follow"))
@@ -60,7 +58,7 @@ namespace Twitter_Bot
                 block_stat = true;
                 follow_stat = false;
                 followUser.Enabled = false;
-                
+
                 followUser.Text = "Follow User";
                 followUser.BackColor = Color.Gray;
 
@@ -155,7 +153,7 @@ namespace Twitter_Bot
                 block_button.Click();
                 IWebElement confirm_button = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath("//div[@data-testid = 'confirmationSheetConfirm']")));
                 confirm_button.Click();
-                block_stat=false;
+                block_stat = false;
             }
 
             block_check();

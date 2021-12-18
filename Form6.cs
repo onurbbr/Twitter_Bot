@@ -1,11 +1,8 @@
-﻿using System;
-using System.Drawing;
-using System.Threading;
-using System.Windows.Forms;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using Keys = OpenQA.Selenium.Keys;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Twitter_Bot
 {
@@ -51,10 +48,10 @@ namespace Twitter_Bot
                 Like_btn.Text = "Like";
                 Like_btn.BackColor = ColorTranslator.FromHtml("#7856ff");
                 Like_btn.Font = new Font(Like_btn.Font.Name, 12, FontStyle.Regular);
-                like_stat=false;
+                like_stat = false;
             }
         }
-        
+
         private void check_retweet()
         {
             IWebElement l_btn = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.XPath("(//article[@data-testid = 'tweet']/descendant::div[contains(@data-testid , 'retweet')])[1]")));
@@ -94,7 +91,7 @@ namespace Twitter_Bot
 
             profile_tag = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.XPath("(//a//div[@dir = 'ltr'])[1]")));
             label3.Text = profile_tag.Text;
-            
+
             check_retweet();
             check_like();
         }
@@ -111,7 +108,7 @@ namespace Twitter_Bot
         {
             Form1.driver.Quit();
         }
-        
+
         private void Retweet_btn_Click(object sender, EventArgs e)
         {
             if (Retweet_btn.Text == "Retweet")
@@ -120,7 +117,7 @@ namespace Twitter_Bot
                 r_btn.Click();
                 IWebElement r_btn2 = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath("//div[@role = 'menuitem' and @data-testid='retweetConfirm']")));
                 r_btn2.Click();
-                
+
                 retweet_stat = true;
             }
             else

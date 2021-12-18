@@ -1,10 +1,9 @@
-﻿using System;
-using System.Drawing;
-using System.Threading;
-using System.Windows.Forms;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
+using System;
+using System.Threading;
+using System.Windows.Forms;
 using Keys = OpenQA.Selenium.Keys;
 
 namespace Twitter_Bot
@@ -44,7 +43,7 @@ namespace Twitter_Bot
                 //locate pass input and write pass
                 IWebElement pass = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.Name("password")));
                 pass.SendKeys(user_pass + Keys.Enter);
-                
+
                 Thread.Sleep(5000);
 
                 if (driver.Url == "https://twitter.com/i/flow/login")
@@ -75,11 +74,11 @@ namespace Twitter_Bot
             ChromeOptions options = new ChromeOptions();
             options.BinaryLocation = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
             //options.AddArgument("--user-data-dir=" + System.IO.Path.GetTempPath() + "\\twitter_bot_user_data\\" + textBox1.Text.ToString());
-            //options.AddArguments("headless");
+            options.AddArguments("headless");
 
             ChromeDriverService driverService = ChromeDriverService.CreateDefaultService("C:\\Program Files\\Google\\Chrome\\Application");
             driverService.HideCommandPromptWindow = true;
-            
+
 
             // !login(driver, textBox1.Text.ToString(), textBox2.Text.ToString())
             // 1 != 1
@@ -96,12 +95,12 @@ namespace Twitter_Bot
                 if (!login(driver, textBox1.Text.ToString(), textBox2.Text.ToString()))
                 {
                     Console.WriteLine("Login Error! Plz try again!");
-                    label3.Visible=true;
+                    label3.Visible = true;
                     driver.Quit();
                 }
-                else //Buraya kullanıcının şifresini yanlış girmesi durumunu ekleyelim
+                else
                 {
-                    
+
                     SetValueForText1 = textBox1.Text;
                     this.Hide();
                     Form2 formshow = new Form2();

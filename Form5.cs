@@ -1,11 +1,7 @@
-﻿using System;
-using System.Drawing;
-using System.Threading;
-using System.Windows.Forms;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using Keys = OpenQA.Selenium.Keys;
+using System;
+using System.Windows.Forms;
 
 namespace Twitter_Bot
 {
@@ -26,10 +22,10 @@ namespace Twitter_Bot
             }
             else
             {
-                if (textBox1.Text.Length < 28 || textBox1.Text.Substring(0,20) != "https://twitter.com/" || !textBox1.Text.Contains("status"))
+                if (textBox1.Text.Length < 28 || textBox1.Text.Substring(0, 20) != "https://twitter.com/" || !textBox1.Text.Contains("status"))
                 {
                     label2.Text = "Your link must start with https://twitter.com/";
-                    label2.Visible=true;
+                    label2.Visible = true;
                 }
                 else
                 {
