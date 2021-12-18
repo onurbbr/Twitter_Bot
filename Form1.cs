@@ -38,12 +38,19 @@ namespace Twitter_Bot
                 //if input name is text it means that wants username of tel
                 if (input_name == "text")
                 {
-                    telephone_input.SendKeys("ServanBalar" + Keys.Enter);
+                    telephone_input.SendKeys(textBox1.Text + Keys.Enter);
                 }
 
                 //locate pass input and write pass
                 IWebElement pass = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.Name("password")));
                 pass.SendKeys(user_pass + Keys.Enter);
+                
+                Thread.Sleep(5000);
+
+                if (driver.Url == "https://twitter.com/i/flow/login")
+                {
+                    return false;
+                }
                 return true;
 
             }
@@ -58,6 +65,13 @@ namespace Twitter_Bot
         public static string SetValueForText1 = "";
         private void button1_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text.Substring(0, 1) != "@")
+            {
+                label3.Text = "Your username must start with \"@\"";
+                label3.Visible = true;
+                return;
+            }
+            label3.Visible = false;
             ChromeOptions options = new ChromeOptions();
             options.BinaryLocation = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
             //options.AddArgument("--user-data-dir=" + System.IO.Path.GetTempPath() + "\\twitter_bot_user_data\\" + textBox1.Text.ToString());
@@ -82,6 +96,8 @@ namespace Twitter_Bot
                 if (!login(driver, textBox1.Text.ToString(), textBox2.Text.ToString()))
                 {
                     Console.WriteLine("Login Error! Plz try again!");
+                    label3.Visible=true;
+                    driver.Quit();
                 }
                 else //Buraya kullanıcının şifresini yanlış girmesi durumunu ekleyelim
                 {
