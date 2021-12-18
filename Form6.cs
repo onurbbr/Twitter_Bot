@@ -19,8 +19,21 @@ namespace Twitter_Bot
         IWebElement profile_tag;
         WebDriverWait wait = new WebDriverWait(Form1.driver, TimeSpan.FromSeconds(5));
 
-        bool retweet_stat = false;
-        bool like_stat = false;
+        bool retweet_stat;
+        bool like_stat;
+
+        private bool log_check()
+        {
+            try
+            {
+                IWebElement log = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath("//a[@href = '/login']")));
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
 
         private void check_like()
         {
@@ -31,12 +44,14 @@ namespace Twitter_Bot
                 Like_btn.Text = "Liked";
                 Like_btn.BackColor = ColorTranslator.FromHtml("#f91880");
                 Like_btn.Font = new Font(Like_btn.Font.Name, 12, FontStyle.Bold);
+                like_stat = true;
             }
             else
             {
                 Like_btn.Text = "Like";
-                Like_btn.BackColor = SystemColors.Control;
+                Like_btn.BackColor = ColorTranslator.FromHtml("#7856ff");
                 Like_btn.Font = new Font(Like_btn.Font.Name, 12, FontStyle.Regular);
+                like_stat=false;
             }
         }
         
@@ -49,18 +64,23 @@ namespace Twitter_Bot
                 Retweet_btn.BackColor = ColorTranslator.FromHtml("#00ba7c");
                 Retweet_btn.Font = new Font(Like_btn.Font.Name, 12, FontStyle.Bold);
                 Retweet_btn.Text = "Retweeted";
+                retweet_stat = true;
             }
             else
             {
-                Retweet_btn.BackColor = SystemColors.Control;
+                Retweet_btn.BackColor = ColorTranslator.FromHtml("#7856ff");
                 Retweet_btn.Font = new Font(Like_btn.Font.Name, 12, FontStyle.Regular);
                 Retweet_btn.Text = "Retweet";
+                retweet_stat = false;
             }
         }
 
         private void Form6_Load(object sender, EventArgs e)
         {
-            Form1.driver.Navigate().Refresh();
+            while (log_check())
+            {
+                Form1.driver.Navigate().Refresh();
+            }
 
             IWebElement profile_pic = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.XPath("(//a//div//img[contains(@src, 'profile_images')])[1]")));
             string pp_url = profile_pic.GetAttribute("src");

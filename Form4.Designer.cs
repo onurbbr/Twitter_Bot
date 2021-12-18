@@ -53,6 +53,7 @@
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label1.Location = new System.Drawing.Point(258, 277);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
@@ -64,43 +65,51 @@
             // 
             // followUser
             // 
+            this.followUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(86)))), ((int)(((byte)(255)))));
             this.followUser.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.followUser.ForeColor = System.Drawing.Color.White;
             this.followUser.Location = new System.Drawing.Point(35, 344);
             this.followUser.Margin = new System.Windows.Forms.Padding(5);
             this.followUser.Name = "followUser";
             this.followUser.Size = new System.Drawing.Size(213, 60);
             this.followUser.TabIndex = 2;
             this.followUser.Text = "Follow User";
-            this.followUser.UseVisualStyleBackColor = true;
+            this.followUser.UseVisualStyleBackColor = false;
             this.followUser.Click += new System.EventHandler(this.followUser_Click);
             this.followUser.MouseEnter += new System.EventHandler(this.followUser_MouseEnter);
             this.followUser.MouseLeave += new System.EventHandler(this.followUser_MouseLeave);
             // 
             // blockUserbtn
             // 
+            this.blockUserbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(86)))), ((int)(((byte)(255)))));
             this.blockUserbtn.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.blockUserbtn.ForeColor = System.Drawing.Color.White;
             this.blockUserbtn.Location = new System.Drawing.Point(535, 344);
             this.blockUserbtn.Margin = new System.Windows.Forms.Padding(5);
             this.blockUserbtn.Name = "blockUserbtn";
             this.blockUserbtn.Size = new System.Drawing.Size(213, 60);
             this.blockUserbtn.TabIndex = 3;
             this.blockUserbtn.Text = "Block User";
-            this.blockUserbtn.UseVisualStyleBackColor = true;
+            this.blockUserbtn.UseVisualStyleBackColor = false;
             this.blockUserbtn.Click += new System.EventHandler(this.blockUserbtn_Click);
             this.blockUserbtn.MouseEnter += new System.EventHandler(this.blockUserbtn_MouseEnter);
             this.blockUserbtn.MouseLeave += new System.EventHandler(this.blockUserbtn_MouseLeave);
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Location = new System.Drawing.Point(17, 16);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(43, 39);
             this.button3.TabIndex = 4;
             this.button3.Text = "<--";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.MouseEnter += new System.EventHandler(this.button3_MouseEnter);
+            this.button3.MouseLeave += new System.EventHandler(this.button3_MouseLeave);
             // 
             // label2
             // 
@@ -119,6 +128,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
             this.ClientSize = new System.Drawing.Size(779, 444);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button3);

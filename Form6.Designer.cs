@@ -51,81 +51,93 @@
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.Color.MistyRose;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(39)))), ((int)(((byte)(50)))));
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(241, 71);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(241, 99);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(15);
-            this.label1.Size = new System.Drawing.Size(515, 347);
+            this.label1.Size = new System.Drawing.Size(515, 319);
             this.label1.TabIndex = 1;
             this.label1.Text = "tweet";
             // 
             // Retweet_btn
             // 
+            this.Retweet_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(86)))), ((int)(((byte)(255)))));
             this.Retweet_btn.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Retweet_btn.ForeColor = System.Drawing.Color.White;
             this.Retweet_btn.Location = new System.Drawing.Point(33, 246);
             this.Retweet_btn.Margin = new System.Windows.Forms.Padding(4);
             this.Retweet_btn.Name = "Retweet_btn";
             this.Retweet_btn.Size = new System.Drawing.Size(200, 49);
             this.Retweet_btn.TabIndex = 2;
             this.Retweet_btn.Text = "Retweet";
-            this.Retweet_btn.UseVisualStyleBackColor = true;
+            this.Retweet_btn.UseVisualStyleBackColor = false;
             this.Retweet_btn.Click += new System.EventHandler(this.Retweet_btn_Click);
             this.Retweet_btn.MouseEnter += new System.EventHandler(this.Retweet_btn_MouseEnter);
             this.Retweet_btn.MouseLeave += new System.EventHandler(this.Retweet_btn_MouseLeave);
             // 
             // Like_btn
             // 
+            this.Like_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(86)))), ((int)(((byte)(255)))));
             this.Like_btn.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Like_btn.ForeColor = System.Drawing.Color.White;
             this.Like_btn.Location = new System.Drawing.Point(33, 303);
             this.Like_btn.Margin = new System.Windows.Forms.Padding(4);
             this.Like_btn.Name = "Like_btn";
             this.Like_btn.Size = new System.Drawing.Size(200, 49);
             this.Like_btn.TabIndex = 3;
             this.Like_btn.Text = "Like";
-            this.Like_btn.UseVisualStyleBackColor = true;
+            this.Like_btn.UseVisualStyleBackColor = false;
             this.Like_btn.Click += new System.EventHandler(this.Like_btn_Click);
             this.Like_btn.MouseEnter += new System.EventHandler(this.Like_btn_MouseEnter);
             this.Like_btn.MouseLeave += new System.EventHandler(this.Like_btn_MouseLeave);
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(241, 28);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(200, 43);
+            this.label2.Size = new System.Drawing.Size(515, 30);
             this.label2.TabIndex = 4;
             this.label2.Text = "Username";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(451, 28);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(148)))), ((int)(((byte)(161)))));
+            this.label3.Location = new System.Drawing.Point(241, 58);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(205, 28);
+            this.label3.Size = new System.Drawing.Size(515, 28);
             this.label3.TabIndex = 5;
             this.label3.Text = "Usertag";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // button3
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(54)))), ((int)(((byte)(64)))));
+            this.button3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Location = new System.Drawing.Point(33, 369);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(200, 49);
             this.button3.TabIndex = 6;
             this.button3.Text = "Back";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
             this.ClientSize = new System.Drawing.Size(779, 444);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label3);
