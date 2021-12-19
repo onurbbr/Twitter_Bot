@@ -18,50 +18,37 @@ namespace Twitter_Bot
             InitializeComponent();
         }
 
-        OleDbConnection conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\kaanm\source\repos\onurbbr\Twitter_Bot\userDatabase.accdb");
+        OleDbConnection conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Onur\source\repos\Twitter_Bot\userDatabase.accdb");
         OleDbCommand AccessCommand;
         OleDbDataAdapter da;
 
         void listusers()
-        {
-           
+        {  
             conn.Open();
             da = new OleDbDataAdapter("select * from UserTable", conn);
             DataTable tablo = new DataTable();
             da.Fill(tablo);
             dataGridView1.DataSource = tablo;
             conn.Close();
-
         }
 
-        /*
-        private void showInformation()
-        {
-            conn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=database.accdb");
-            conn.Open();
-            listView1.Items.Clear();
-            
-            
-            AccessCommand.Connection = conn;
-            AccessCommand.CommandText = ("Select * from LoginHistory");
-            OleDbDataReader read = AccessCommand.ExecuteReader();
-            while (read.Read())
-            {
-                ListViewItem addNew = new ListViewItem();
-                addNew.Text = read["ID"].ToString();
-                addNew.SubItems.Add(read["Username"].ToString());
-                addNew.SubItems.Add(read["Usertag"].ToString());
-                addNew.SubItems.Add(read["CurrDate"].ToString());
-                listView1.Items.Add(addNew);
-            }
-            conn.Close();
-        }
-        */
+        
         private void Form7_Load(object sender, EventArgs e)
         {
-            //showInformation();
             listusers();
         }
 
+        private void Form7_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 formshow = new Form1();
+            formshow.ShowDialog();
+            formshow = null;
+        }
     }
 }
