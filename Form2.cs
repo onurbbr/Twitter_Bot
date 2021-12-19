@@ -15,14 +15,8 @@ namespace Twitter_Bot
         {
             InitializeComponent();
         }
+
         
-        IWebElement userName_web = Form1.driver.FindElement(By.XPath("//div[@data-testid = 'SideNav_AccountSwitcher_Button']/descendant::div[@dir = 'auto']/descendant::span"));
-        string userName_str = userName_web.Text;
-        OleDbConnection conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\twitterbot\userDatabase.accdb");
-        OleDbDataAdapter da;
-        conn.Open();
-        OleDbCommand command = new OleDbCommand("insert into UserTable (UserName, UserTag) values ('"+ Form1.SetValueForText1.ToString()+"', '"+ userName_str.ToString()+"')", conn);
-        conn.Close();
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -42,6 +36,14 @@ namespace Twitter_Bot
         private void Form2_Load(object sender, EventArgs e)
         {
             label3.Text = Form1.SetValueForText1;
+
+            IWebElement userName_web = Form1.driver.FindElement(By.XPath("//div[@data-testid = 'SideNav_AccountSwitcher_Button']/descendant::div[@dir = 'auto']/descendant::span"));
+            string userName_str = userName_web.Text;
+            OleDbConnection conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\twitterbot\userDatabase.accdb");
+            OleDbDataAdapter da;
+            conn.Open();
+            OleDbCommand command = new OleDbCommand("insert into UserTable (UserName, UserTag) values ('" + Form1.SetValueForText1.ToString() + "', '" + userName_str.ToString() + "')", conn);
+            conn.Close();
         }
 
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
