@@ -108,17 +108,19 @@ namespace Twitter_Bot
                 }
             }
         }
+        
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
             Form7 formshow = new Form7();
             formshow.ShowDialog();
             formshow = null;
-        }
-
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            System.Windows.Forms.Application.Exit();
         }
     }
 }

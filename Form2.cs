@@ -39,12 +39,15 @@ namespace Twitter_Bot
 
             Form1.driver.Navigate().GoToUrl("https://twitter.com/" + Form1.SetValueForText1);
 
+            string theDate = dateTimePicker1.Value.ToString("yyyy-MM-dd");
+            string theTime = dateTimePicker1.Value.ToString("h:mm tt");
+
             WebDriverWait wait = new WebDriverWait(Form1.driver, TimeSpan.FromSeconds(5));
             IWebElement userName_web = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.XPath("//div[@data-testid = 'UserName']/descendant::div[@dir = 'auto']/descendant::span/descendant::span")));
             string userName_str = userName_web.Text;
             OleDbConnection conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\twitterbot\userDatabase.accdb");
             conn.Open();
-            OleDbCommand command = new OleDbCommand("insert into UserTable (UserName, UserTag) values ('" + Form1.SetValueForText1.ToString() + "', '" + userName_str.ToString() + "')", conn);
+            OleDbCommand command = new OleDbCommand("insert into UserTable (UserName, UserTag, UDate, UTime) values ('" + Form1.SetValueForText1.ToString() + "', '" + userName_str.ToString() + "', '" + theDate + "', '" + theTime + "')", conn);
             command.ExecuteNonQuery();
             conn.Close();
         }
