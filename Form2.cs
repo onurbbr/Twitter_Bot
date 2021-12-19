@@ -43,9 +43,9 @@ namespace Twitter_Bot
             IWebElement userName_web = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.XPath("//div[@data-testid = 'UserName']/descendant::div[@dir = 'auto']/descendant::span/descendant::span")));
             string userName_str = userName_web.Text;
             OleDbConnection conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\twitterbot\userDatabase.accdb");
-            OleDbDataAdapter da;
             conn.Open();
             OleDbCommand command = new OleDbCommand("insert into UserTable (UserName, UserTag) values ('" + Form1.SetValueForText1.ToString() + "', '" + userName_str.ToString() + "')", conn);
+            command.ExecuteNonQuery();
             conn.Close();
         }
 
