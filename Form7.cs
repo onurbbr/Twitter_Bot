@@ -18,7 +18,7 @@ namespace Twitter_Bot
             InitializeComponent();
         }
 
-        OleDbConnection conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Onur\source\repos\Twitter_Bot\userDatabase.accdb");
+        OleDbConnection conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\twitterbot\userDatabase.accdb");
         OleDbCommand AccessCommand;
         OleDbDataAdapter da;
 
