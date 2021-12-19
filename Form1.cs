@@ -115,5 +115,13 @@ namespace Twitter_Bot
             textBox1.Text = "jopqzijeudbr@pussport.com";
             textBox2.Text = "9YNkEfnv";
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form7 formshow = new Form7();
+            formshow.ShowDialog();
+            formshow = null;
+        }
     }
 }
