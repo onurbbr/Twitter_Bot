@@ -100,7 +100,6 @@ namespace Twitter_Bot
                 }
                 else
                 {
-
                     SetValueForText1 = textBox1.Text;
                     this.Hide();
                     Form2 formshow = new Form2();
@@ -109,13 +108,6 @@ namespace Twitter_Bot
                 }
             }
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            textBox1.Text = "jopqzijeudbr@pussport.com";
-            textBox2.Text = "9YNkEfnv";
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
