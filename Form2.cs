@@ -37,7 +37,10 @@ namespace Twitter_Bot
         {
             label3.Text = Form1.SetValueForText1;
 
-            IWebElement userName_web = Form1.driver.FindElement(By.XPath("//div[@data-testid = 'SideNav_AccountSwitcher_Button']/descendant::div[@dir = 'auto']/descendant::span"));
+            Form1.driver.Navigate().GoToUrl("https://twitter.com/" + Form1.SetValueForText1);
+
+            WebDriverWait wait = new WebDriverWait(Form1.driver, TimeSpan.FromSeconds(5));
+            IWebElement userName_web = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.XPath("//div[@data-testid = 'UserName']/descendant::div[@dir = 'auto']/descendant::span/descendant::span")));
             string userName_str = userName_web.Text;
             OleDbConnection conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\twitterbot\userDatabase.accdb");
             OleDbDataAdapter da;
