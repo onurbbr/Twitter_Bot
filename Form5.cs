@@ -62,6 +62,7 @@ namespace Twitter_Bot
         private void Form5_FormClosing(object sender, FormClosingEventArgs e)
         {
             Form1.driver.Quit();
+            System.Windows.Forms.Application.Exit();
         }
     }
 }

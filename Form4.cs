@@ -213,6 +213,7 @@ namespace Twitter_Bot
         private void Form4_FormClosing(object sender, FormClosingEventArgs e)
         {
             Form1.driver.Quit();
+            System.Windows.Forms.Application.Exit();
         }
 
         private void button3_MouseEnter(object sender, EventArgs e)

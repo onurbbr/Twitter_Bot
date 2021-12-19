@@ -73,6 +73,7 @@ namespace Twitter_Bot
         private void Form3_FormClosing(object sender, FormClosingEventArgs e)
         {
             Form1.driver.Quit();
+            System.Windows.Forms.Application.Exit();
         }
 
         private void button2_MouseEnter(object sender, EventArgs e)

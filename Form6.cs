@@ -107,6 +107,7 @@ namespace Twitter_Bot
         private void Form6_FormClosed(object sender, FormClosedEventArgs e)
         {
             Form1.driver.Quit();
+            System.Windows.Forms.Application.Exit();
         }
 
         private void Retweet_btn_Click(object sender, EventArgs e)

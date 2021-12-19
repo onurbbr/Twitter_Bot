@@ -115,5 +115,10 @@ namespace Twitter_Bot
             formshow.ShowDialog();
             formshow = null;
         }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }
